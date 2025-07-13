@@ -1,0 +1,6 @@
+@Commify.TaxCalculator.Server_HostAddress = http://localhost:5221
+
+GET {{Commify.TaxCalculator.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

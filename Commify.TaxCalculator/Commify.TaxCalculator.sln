@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commify.TaxCalculator.API", "Commify.TaxCalculator.API\Commify.TaxCalculator.API.csproj", "{09B2E17C-79B0-6469-5B25-66D51336A13F}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Commify.TaxCalculator.UI", "Commify.TaxCalculator.UI\Commify.TaxCalculator.UI.esproj", "{B91001D2-7426-81DD-01BD-AB0DEE3D5F79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09B2E17C-79B0-6469-5B25-66D51336A13F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09B2E17C-79B0-6469-5B25-66D51336A13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09B2E17C-79B0-6469-5B25-66D51336A13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09B2E17C-79B0-6469-5B25-66D51336A13F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B91001D2-7426-81DD-01BD-AB0DEE3D5F79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B91001D2-7426-81DD-01BD-AB0DEE3D5F79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B91001D2-7426-81DD-01BD-AB0DEE3D5F79}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B91001D2-7426-81DD-01BD-AB0DEE3D5F79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B91001D2-7426-81DD-01BD-AB0DEE3D5F79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B91001D2-7426-81DD-01BD-AB0DEE3D5F79}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99C6682A-FDC2-4166-A91E-085B9F562CE4}
+	EndGlobalSection
+EndGlobal
