@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commify.TaxCalculator.API",
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Commify.TaxCalculator.UI", "Commify.TaxCalculator.UI\Commify.TaxCalculator.UI.esproj", "{B91001D2-7426-81DD-01BD-AB0DEE3D5F79}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commify.TaxCalculator.API.UnitTests", "Commify.TaxCalculator.UnitTests\Commify.TaxCalculator.API.UnitTests.csproj", "{8F884A87-0F2B-4132-8554-23C94E0134A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commify.TaxCalculator.API.IntegrationTests", "Commify.TaxCalculator.IntegrationTests\Commify.TaxCalculator.API.IntegrationTests.csproj", "{D09BB660-A73D-4BC5-99BB-F297A4061156}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,9 +29,21 @@ Global
 		{B91001D2-7426-81DD-01BD-AB0DEE3D5F79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B91001D2-7426-81DD-01BD-AB0DEE3D5F79}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B91001D2-7426-81DD-01BD-AB0DEE3D5F79}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8F884A87-0F2B-4132-8554-23C94E0134A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F884A87-0F2B-4132-8554-23C94E0134A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F884A87-0F2B-4132-8554-23C94E0134A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F884A87-0F2B-4132-8554-23C94E0134A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D09BB660-A73D-4BC5-99BB-F297A4061156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D09BB660-A73D-4BC5-99BB-F297A4061156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D09BB660-A73D-4BC5-99BB-F297A4061156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D09BB660-A73D-4BC5-99BB-F297A4061156}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8F884A87-0F2B-4132-8554-23C94E0134A4} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{D09BB660-A73D-4BC5-99BB-F297A4061156} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99C6682A-FDC2-4166-A91E-085B9F562CE4}
