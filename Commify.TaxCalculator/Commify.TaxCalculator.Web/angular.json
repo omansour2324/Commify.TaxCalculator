@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "commify.taxcalculator.client": {
+    "commify.Taxcalculator.Web": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/commify.taxcalculator.client",
+            "outputPath": "dist/Commify.Taxcalculator.Web",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "commify.taxcalculator.client:build:production"
+              "browserTarget": "commify.Taxcalculator.Web:build:production"
             },
             "development": {
-              "browserTarget": "commify.taxcalculator.client:build:development"
+              "browserTarget": "commify.Taxcalculator.Web:build:development"
             }
           },
           "defaultConfiguration": "development",
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "commify.taxcalculator.client:build"
+            "browserTarget": "commify.Taxcalculator.Web:build"
           }
         },
         "test": {

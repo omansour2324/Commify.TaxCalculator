@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Commify.TaxCalculator.UI\Commify.TaxCalculator.UI.esproj">
+    <ProjectReference Include="..\Commify.TaxCalculator.UI\Commify.TaxCalculator.Web.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>

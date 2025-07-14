@@ -1,5 +1,5 @@
 {
-  "name": "commify.taxcalculator.client",
+  "name": "commify.Taxcalculator.Web",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

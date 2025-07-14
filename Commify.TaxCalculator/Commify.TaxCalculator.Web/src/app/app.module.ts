@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { TaxCalculatorComponent } from './tax/tax-calculator.component';
 
 @NgModule({
@@ -12,7 +13,7 @@ import { TaxCalculatorComponent } from './tax/tax-calculator.component';
     TaxCalculatorComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpClientModule
+    BrowserModule, FormsModule, HttpClientModule, AppRoutingModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
