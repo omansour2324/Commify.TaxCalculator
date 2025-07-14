@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TaxService } from './tax.service';
-import { SalaryInput, TaxCalculationResult } from '../shared/models';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-tax-calculator',
@@ -8,27 +8,29 @@ import { SalaryInput, TaxCalculationResult } from '../shared/models';
   styleUrls: ['./tax-calculator.component.scss']
 })
 export class TaxCalculatorComponent {
-  grossSalary: number = 0;
-  taxResult?: TaxCalculationResult;
-  error: string = '';
+  form: FormGroup;
+  taxResult: any;
+  errorMessage: string | null = null;
 
-  constructor(private taxService: TaxService) { }
+  constructor(private fb: FormBuilder, private http: HttpClient) {
+    this.form = this.fb.group({
+      grossSalary: ['', [Validators.required, Validators.min(0)]]
+    });
+  }
 
-  calculateTax() {
-    if (this.grossSalary <= 0) {
-      this.error = 'Please enter a valid salary.';
-      this.taxResult = undefined;
-      return;
-    }
+  calculateTax(): void {
+    if (this.form.invalid) return;
 
-    this.taxService.calculateTax({ grossSalary: this.grossSalary }).subscribe({
-      next: (res) => {
-        this.taxResult = res;
-        this.error = '';
+    this.errorMessage = null;
+    const grossSalary = this.form.value.grossSalary;
+
+    this.http.post('/api/tax/calculate', { grossSalary }).subscribe({
+      next: (result) => {
+        this.taxResult = result;
       },
       error: (err) => {
-        this.error = 'Calculation failed. Please try again.';
-        this.taxResult = undefined;
+        this.errorMessage = err.error?.message || 'An error occurred';
+        this.taxResult = null;
       }
     });
   }

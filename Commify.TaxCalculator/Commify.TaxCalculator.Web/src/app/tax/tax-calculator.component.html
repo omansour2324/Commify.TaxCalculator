@@ -1,16 +1,28 @@
 <mat-card class="tax-card">
   <h1>UK Tax Calculator</h1>
 
-  <form (ngSubmit)="calculateTax()" #taxForm="ngForm">
+  <form [formGroup]="form" (ngSubmit)="calculateTax()">
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Gross Salary (£)</mat-label>
-      <input matInput type="number" required [(ngModel)]="grossSalary" name="grossSalary" />
+      <input matInput type="number" formControlName="grossSalary" />
+      <mat-error *ngIf="form.get('grossSalary')?.hasError('required')">
+        Gross salary is required
+      </mat-error>
+      <mat-error *ngIf="form.get('grossSalary')?.hasError('min')">
+        Must be 0 or greater
+      </mat-error>
     </mat-form-field>
 
     <div class="button-row">
-      <button mat-raised-button color="primary" type="submit">Calculate</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+        Calculate
+      </button>
     </div>
   </form>
+
+  <mat-error *ngIf="errorMessage" class="error-text">
+    {{ errorMessage }}
+  </mat-error>
 
   <hr />
 
@@ -23,4 +35,5 @@
     <p><strong>Monthly Tax Paid:</strong> £{{ taxResult.monthlyTaxPaid }}</p>
   </div>
 </mat-card>
+
 
