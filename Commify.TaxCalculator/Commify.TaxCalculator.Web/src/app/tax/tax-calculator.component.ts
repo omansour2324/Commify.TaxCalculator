@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import axios from 'axios';
 
 @Component({
   selector: 'app-tax-calculator',
@@ -12,26 +12,24 @@ export class TaxCalculatorComponent {
   taxResult: any;
   errorMessage: string | null = null;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       grossSalary: ['', [Validators.required, Validators.min(0)]]
     });
   }
 
-  calculateTax(): void {
+  async calculateTax(): Promise<void> {
     if (this.form.invalid) return;
 
     this.errorMessage = null;
     const grossSalary = this.form.value.grossSalary;
 
-    this.http.post('/api/tax/calculate', { grossSalary }).subscribe({
-      next: (result) => {
-        this.taxResult = result;
-      },
-      error: (err) => {
-        this.errorMessage = err.error?.message || 'An error occurred';
-        this.taxResult = null;
-      }
-    });
+    try {
+      const response = await axios.post('/api/tax/calculate', { grossSalary });
+      this.taxResult = response.data;
+    } catch (err: any) {
+      this.errorMessage = err.response?.data?.message || 'An error occurred';
+      this.taxResult = null;
+    }
   }
 }
