@@ -1,12 +1,6 @@
 # Commify Income Tax 
 
-# CommifyTaxcalculatorClient
-
-
 <img width="1298" height="780" alt="Front End" src="https://github.com/user-attachments/assets/717555e2-f937-4d72-8522-6d5cd6ca1424" />
-
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
 
 ## Development server
 
