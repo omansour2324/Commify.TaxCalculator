@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "commify.Taxcalculator.Web:build:production"
+              "buildTarget": "commify.Taxcalculator.Web:build:production"
             },
             "development": {
-              "browserTarget": "commify.Taxcalculator.Web:build:development"
+              "buildTarget": "commify.Taxcalculator.Web:build:development"
             }
           },
           "defaultConfiguration": "development",
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "commify.Taxcalculator.Web:build"
+            "buildTarget": "commify.Taxcalculator.Web:build"
           }
         },
         "test": {
