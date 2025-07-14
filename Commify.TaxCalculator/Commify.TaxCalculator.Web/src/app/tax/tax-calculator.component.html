@@ -1,20 +1,26 @@
-<div class="calculator-container">
-  <h1>UK Income Tax Calculator</h1>
+<mat-card class="tax-card">
+  <h1>UK Tax Calculator</h1>
 
-  <div class="form-group">
-    <label for="salary">Gross Annual Salary (£):</label>
-    <input type="number" [(ngModel)]="salary" id="salary" />
-    <button (click)="calculate()">Calculate</button>
+  <form (ngSubmit)="calculateTax()" #taxForm="ngForm">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Gross Salary (£)</mat-label>
+      <input matInput type="number" required [(ngModel)]="grossSalary" name="grossSalary" />
+    </mat-form-field>
+
+    <div class="button-row">
+      <button mat-raised-button color="primary" type="submit">Calculate</button>
+    </div>
+  </form>
+
+  <hr />
+
+  <div class="results" *ngIf="taxResult">
+    <p><strong>Gross Annual Salary:</strong> £{{ taxResult.grossAnnualSalary }}</p>
+    <p><strong>Gross Monthly Salary:</strong> £{{ taxResult.grossMonthlySalary }}</p>
+    <p><strong>Net Annual Salary:</strong> £{{ taxResult.netAnnualSalary }}</p>
+    <p><strong>Net Monthly Salary:</strong> £{{ taxResult.netMonthlySalary }}</p>
+    <p><strong>Annual Tax Paid:</strong> £{{ taxResult.annualTaxPaid }}</p>
+    <p><strong>Monthly Tax Paid:</strong> £{{ taxResult.monthlyTaxPaid }}</p>
   </div>
+</mat-card>
 
-  <div class="error" *ngIf="error">{{ error }}</div>
-
-  <div class="results" *ngIf="result">
-    <p><strong>Gross Annual Salary:</strong> £{{ result.grossAnnualSalary }}</p>
-    <p><strong>Gross Monthly Salary:</strong> £{{ result.grossMonthlySalary }}</p>
-    <p><strong>Net Annual Salary:</strong> £{{ result.netAnnualSalary }}</p>
-    <p><strong>Net Monthly Salary:</strong> £{{ result.netMonthlySalary }}</p>
-    <p><strong>Annual Tax Paid:</strong> £{{ result.annualTaxPaid }}</p>
-    <p><strong>Monthly Tax Paid:</strong> £{{ result.monthlyTaxPaid }}</p>
-  </div>
-</div>

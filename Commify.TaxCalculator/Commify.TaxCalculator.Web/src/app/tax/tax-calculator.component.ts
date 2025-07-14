@@ -8,27 +8,27 @@ import { SalaryInput, TaxCalculationResult } from '../shared/models';
   styleUrls: ['./tax-calculator.component.scss']
 })
 export class TaxCalculatorComponent {
-  salary: number = 0;
-  result?: TaxCalculationResult;
+  grossSalary: number = 0;
+  taxResult?: TaxCalculationResult;
   error: string = '';
 
   constructor(private taxService: TaxService) { }
 
-  calculate() {
-    if (this.salary <= 0) {
+  calculateTax() {
+    if (this.grossSalary <= 0) {
       this.error = 'Please enter a valid salary.';
-      this.result = undefined;
+      this.taxResult = undefined;
       return;
     }
 
-    this.taxService.calculateTax({ grossSalary: this.salary }).subscribe({
+    this.taxService.calculateTax({ grossSalary: this.grossSalary }).subscribe({
       next: (res) => {
-        this.result = res;
+        this.taxResult = res;
         this.error = '';
       },
       error: (err) => {
         this.error = 'Calculation failed. Please try again.';
-        this.result = undefined;
+        this.taxResult = undefined;
       }
     });
   }
