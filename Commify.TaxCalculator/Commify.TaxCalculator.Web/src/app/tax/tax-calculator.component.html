@@ -1,6 +1,5 @@
 <mat-card class="tax-card">
   <h1>UK Tax Calculator</h1>
-
   <form [formGroup]="form" (ngSubmit)="calculateTax()">
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Gross Salary (£)</mat-label>
@@ -19,13 +18,10 @@
       </button>
     </div>
   </form>
-
   <mat-error *ngIf="errorMessage" class="error-text">
     {{ errorMessage }}
   </mat-error>
-
   <hr />
-
   <div class="results" *ngIf="taxResult">
     <p><strong>Gross Annual Salary:</strong> £{{ taxResult.grossAnnualSalary }}</p>
     <p><strong>Gross Monthly Salary:</strong> £{{ taxResult.grossMonthlySalary }}</p>
